@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name"> Texts </string>
+    <string name="display_label"> Hello TJ! </string>
+    <string name="fields_label"> Geosystems Fields! </string>
+    <string name="name_hint"> Name? </string>
+    <string name="standard_button"> Submit </string>
+    <string-array name="fields_array">
+        <item>Geology</item>
+        <item>Astronomy</item>
+        <item>Meteorology</item>
+        <item>Geophysics</item>
+        <item>Ecology</item>
+        <item>Climatology</item>
+        <item>Planetary Science</item>
+        <item>Systems Science</item>
+    </string-array>
+</resources>
