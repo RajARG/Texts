@@ -14,9 +14,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     ConstraintLayout currentLayout;
 
-    TextView displayText;
+    TextView nameText;
     EditText nameInput;
     Button nameButton;
+
+    TextView fieldText;
     Button fieldButton;
 
     int count = 0;
@@ -26,16 +28,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        displayText = findViewById(R.id.display1);
+        nameText = findViewById(R.id.display1);
         nameInput = findViewById(R.id.nameEntry);
         nameButton = findViewById(R.id.button1);
+        
+        fieldText = findViewById(R.id.display2);
         fieldButton = findViewById(R.id.button2);
 
         nameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = "Hello, " + nameInput.getText() + "!";
-                displayText.setText(name);
+                nameText.setText(name);
             }
         });
 
@@ -43,8 +47,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Resources res = getResources();
+
                 String[] fields = res.getStringArray(R.array.fields_array);
-                displayText.setText(planets[count%fields.size()]);
+                fieldText.setText(fields[count%fields.length]);
+
+                count++;
             }
         });
     }
